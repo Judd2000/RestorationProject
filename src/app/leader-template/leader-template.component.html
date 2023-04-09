@@ -1,0 +1,21 @@
+<div class="flex items-center justify-center">
+    <div class="flex items-center">
+      <img src="{{imageUrl}}" class="w-40 h-40 object-cover mr-4" alt="Image">
+      <div class="flex-1">
+        <p class="font-bold leading-loose w-1/2">{{description}}</p>
+        <button class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg shadow-md" (click)="openDialog(template)">
+          View Sources
+        </button>
+        <ng-template #template>
+            <div class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
+              <div class="bg-white rounded-lg p-6 relative">
+                <button mat-icon-button mat-dialog-close class="absolute top-2 right-2">
+                  <mat-icon>close</mat-icon>
+                </button>
+                <h3 class="text-blue-500 underline" [innerHtml]="dialogSources" class="leading-loose"></h3>
+              </div>
+            </div>
+          </ng-template>
+      </div>
+    </div>
+  </div>
